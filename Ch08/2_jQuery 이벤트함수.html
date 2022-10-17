@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>2_jQuery 이벤트 함수</title>
@@ -9,10 +10,11 @@
         내용 : jQuery 이벤트 함수 실습하기
     -->
     <style>
-        html{
+        html {
             width: 100%;
             height: 2000px;
         }
+
         .box {
             display: inline-block;
             width: 100px;
@@ -25,51 +27,51 @@
             right: 20px;
             top: 10px;
         }
+
         #top {
             position: fixed;
             right: 10px;
             bottom: 10px;
         }
-
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        $(function(){
+        $(function () {
 
-            $('.box1').click(function(){
-                $(this).css('background','red');
+            $('.box1').click(function () {
+                $(this).css('background', 'red');
             });
 
-            $('.box2').mousedown(function(){
+            $('.box2').mousedown(function () {
                 $(this).css('background', 'green');
             });
 
-            $('.box3').mouseup(function(){
+            $('.box3').mouseup(function () {
                 $(this).css('background', 'blue');
             });
 
-            $('.box4').mouseover(function(){
+            $('.box4').mouseover(function () {
                 $(this).css('background', 'orange');
             });
 
-            $('.box5').mouseout(function(){
+            $('.box5').mouseout(function () {
                 $(this).css('background', 'yellow');
             });
 
-            $('.box6').hover(function(){
+            $('.box6').hover(function () {
                 // mouseover
                 $(this).css('background', 'yellow');
-            }, function(){
+            }, function () {
                 // mouseout
                 $(this).css('background', 'green');
             });
 
-            $('.box7').mousemove(function(){
+            $('.box7').mousemove(function () {
                 console.log('mousemove!');
             });
 
             // 브라우저 이벤트
-            $(window).resize(function(){
+            $(window).resize(function () {
                 console.log('resize!');
 
                 let w = $(this).width();
@@ -79,20 +81,21 @@
                 $('p:eq(0) > span:eq(1)').text(h);
             });
 
-            $(window).scroll(function(){
+            $(window).scroll(function () {
                 console.log('scroll');
 
                 let t = $(this).scrollTop();
                 $('p:eq(1) > span').text(t);
             });
 
-            $('#top').click(function(){
+            $('#top').click(function () {
                 $(window).scrollTop(0);
             });
 
         });
     </script>
 </head>
+
 <body>
     <h3>jQuery 이벤트 함수</h3>
 
@@ -107,8 +110,8 @@
 
     <h4>브라우저 이벤트</h4>
     <p>
-        가로 : <span>0</span><br/>
-        세로 : <span>0</span><br/>
+        가로 : <span>0</span><br />
+        세로 : <span>0</span><br />
     </p>
 
     <p>
@@ -116,6 +119,7 @@
     </p>
 
     <button id="top">상위이동</button>
-    
+
 </body>
+
 </html>
